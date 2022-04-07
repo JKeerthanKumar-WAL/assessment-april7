@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   Product.destroy({ where: { id: req.params.id } }).then(
-    (res) => {
+    (product) => {
       res.json({ status: 1, data: "Deleted product details" });
     },
     (err) => {
